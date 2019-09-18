@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: user-service_microservice
+  datasource: 
+    url: jdbc:mysql://localhost:3306/users
+    username: root
+    password: 1234
+    
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+      
+server:
+  port: 8082 
+  
+#Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ 
+      
+#task-service:
+# ribbon:
+#   listOfServers: http://localhost:8083/,http://localhost:8085/
